@@ -1,20 +1,25 @@
 package entity;
+import java.util.List;
 
 public class userFavorites {
 
-    public boolean addArtworkToFavorite(){
+    private int id;
+    private int userId;
+    private List<Integer> artworkIds;
 
-        return false;
+
+    public userFavorites(){}
+
+    public userFavorites(int id, int userId, List<Integer> artworkIds) {
+        this.id = id;
+        this.userId = userId;
+        this.artworkIds = artworkIds;
     }
 
-    public boolean removeArtworkFromFavorite(){
-
-        return false;
-    }
-
-    public boolean getUserFavoriteArtworks(){
-
-        return false;
-    }
-
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public int getUserId() { return userId; }
+    public void setUserId(int userId) { this.userId = userId; }
+    public List<Integer> getArtworkIds() { return artworkIds; }
+    public void setArtworkIds(List<Integer> artworkIds) { this.artworkIds = artworkIds; }
 }
