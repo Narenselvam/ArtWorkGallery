@@ -24,6 +24,7 @@ public class User {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -50,4 +51,20 @@ public class User {
     public void setProfilePicture(String profilePicture) { this.profilePicture = profilePicture; }
     public List<Artwork> getFavoriteArtworks() { return favoriteArtworks; }
     public void setFavoriteArtworks(List<Artwork> favoriteArtworks) { this.favoriteArtworks = favoriteArtworks; }
-}
+
+    public boolean addArtworkToFavorites(Artwork artwork) {
+        if (!favoriteArtworks.contains(artwork)) {
+            return favoriteArtworks.add(artwork);
+        }
+        return false; // Artwork is already in the favorites
+    }
+
+    public boolean removeArtworkFromFavorites(Artwork artwork) {
+        return favoriteArtworks.remove(artwork);
+    }
+
+    public List<Artwork> getFavoriteArtworksList() {
+        return new ArrayList<>(favoriteArtworks); // Return a copy to avoid direct modification
+    }
+
+    }
